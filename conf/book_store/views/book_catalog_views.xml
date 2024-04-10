@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <record id="action_bookstore_catalog" model="ir.actions.act_window">
+      <field name="name">book catalog</field>
+      <field name="res_model">book.catalog</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p> Create a new catalog.</p>
+      </field>
+    </record>
+    <menuitem id="bookstore_catalog" name="Book Catalog" action="action_book_catalog"/>
+  </data>
+</odoo>

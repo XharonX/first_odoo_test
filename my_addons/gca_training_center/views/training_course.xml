@@ -1,0 +1,95 @@
+<odoo>
+  <data>
+<!--     ***************        ADVANCED VIEW        ***************      -->
+
+    <record id="action_training_basic_course" model="ir.actions.act_window">
+      <field name="name">Basic Courses</field>
+      <field name="res_model">gca.training.course</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="training_course_tree_view"/>
+      <field name="domain">[('level','=','beginner')]</field>
+      <field name="context">{'default_level': 'beginner', 'default_descr': 'Basic Course'}</field>
+      <field name="help" type="xml">
+        <p>
+          Currently, There is no Basic course.
+        </p>
+      </field>
+
+    </record>
+    <record id="action_training_intermediate_course" model="ir.actions.act_window">
+        <field name="name">Intermediate Courses</field>
+        <field name="res_model">gca.training.course</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="training_course_tree_view"/>
+        <field name="domain">[('level','=','intermediate')]</field>
+        <field name="context">{'default_level': 'intermediate', 'default_descr': 'Intermediate Course'}</field>
+        <field name="help" type="xml">
+          <p>
+            Currently, There is no intermediate course.
+          </p>
+        </field>
+
+      </record>
+    <record id="action_training_advanced_course" model="ir.actions.act_window">
+      <field name="name">Advanced Courses</field>
+      <field name="res_model">gca.training.course</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="training_course_tree_view"/>
+      <field name="domain">[('level','=','advanced')]</field>
+      <field name="context">{'default_level': 'advanced', 'default_descr': 'Advanced Course'}</field>
+      <field name="help" type="xml">
+        <p>
+          Currently, There is no advanced course.
+        </p>
+      </field>
+
+    </record>
+    <record id="action_training_expert_course" model="ir.actions.act_window">
+      <field name="name">Expert</field>
+      <field name="res_model">gca.training.course</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="training_course_tree_view"/>
+      <field name="domain">[('level','=','expert')]</field>
+      <field name="context">{'default_level': 'Expert', 'default_descr': 'Expert Course'}</field>
+      <field name="help" type="xml">
+        <p>
+          Currently, There is no expert course.
+        </p>
+      </field>
+    </record>
+
+
+<!--     ***************        DEFAULT VIEW        ***************-->
+    <record id="action_training_course" model="ir.actions.act_window">
+      <field name="name">Training Center</field>
+      <field name="res_model">gca.training.course</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="help" type="html">
+          <p> Draw a new course.</p>
+      </field>
+    </record>
+    <record id="action_training_instructor" model="ir.actions.act_window">
+      <field name="name">Training Instructor</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p>  Opp! There is no instructor. </p>
+      </field>
+    </record>
+    <record id="action_training_center" model="ir.actions.act_window">
+      <field name="name">Training Center</field>
+      <field name="res_model">gca.training.center</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_course_chapter" model="ir.actions.act_window">
+      <field name="name">Course Chapter</field>
+      <field name="res_model">gca.training.course.chapter</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+<!--    <menuitem parent="training_course" id="training_course_menu" name="Courses"  action="action_training_course"/>-->
+<!--    <menuitem parent="training_course" id="basic_training_course_menu" name="Basic level"  action="action_training_basic_course"/>-->
+<!--    <menuitem parent="training_course" id="intermediate_training_course_menu" name="Intermediate level"  action="action_training_intermediate_course"/>-->
+<!--    <menuitem parent="training_course" id="advanced_training_course_menu" name="Advanced level" action="action_training_advanced_course"/>-->
+<!--    <menuitem parent="training_course" id="expert_training_course_menu" name="Expert level" action="action_training_expert_course" />-->
+  </data>
+</odoo>

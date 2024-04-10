@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="kanban_bookstore_book" model="ir.ui.view">
+      <field name="name">kanban.bookstore.book</field>
+      <field name="model">bookstore.book</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_mobile">
+          <field name="image" />
+          <field name="name" />
+          <template>
+            <t t-name="kanban-box">
+              <div class="row">
+                <div class="col-6">
+                  <field name="image" widget="image" class="oe_avatar" />
+                </div>
+                <div class="col text-end">
+                  <h3 class="oe_kanban_details">
+                    <field name="name" />
+                    <br/>
+                </h3>
+                  <h3>
+                    <field name="author_id" />
+                  </h3>
+                </div>
+              </div>
+            </t>
+          </template>
+        </kanban>
+      </field>
+    </record>
+  </data>
+</odoo>

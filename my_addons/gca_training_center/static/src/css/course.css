@@ -1,0 +1,11 @@
+.group-container {
+    display: flex; /* Arrange groups horizontally */
+}
+
+.left-group,
+.right-group {
+    flex: 1; /* Make groups take equal width */
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px;
+}

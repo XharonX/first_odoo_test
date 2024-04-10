@@ -1,0 +1,32 @@
+<odoo>
+  <data>
+    <menuitem id="bookstore" name="Bookstore" />
+    <record id="action_bookstore_book" model="ir.actions.act_window">
+      <field name="name">Book Store</field>
+      <field name="res_model">bookstore.book</field>
+      <field name="view_mode">kanban,tree,search,form</field>
+      <field name="help" type="html">
+        <p> Create a new book.</p>
+      </field>
+    </record>
+    <record id="action_bookstore_catalog" model="ir.actions.act_window">
+      <field name="name">Catalog</field>
+      <field name="res_model">bookstore.catalog</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p> Catalog </p>
+      </field>
+    </record>
+    <record id="action_bookstore_tag" model="ir.actions.act_window">
+      <field name="name">Catalog</field>
+      <field name="res_model">bookstore.tag</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p> Catalog </p>
+      </field>
+    </record>
+    <menuitem id="bookstore_book" name="book list" action="action_bookstore_book" parent="bookstore" group="book_" />
+    <menuitem id="bookstore_tag" name="book tag" action="action_bookstore_book" parent="bookstore" />
+    <menuitem id="bookstore_catalog" name="book catalog" action="action_bookstore_catalog" parent="bookstore"/>
+  </data>
+</odoo>

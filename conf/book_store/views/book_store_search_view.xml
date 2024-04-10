@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="search_bookstore" model="ir.ui.view">
+      <field name="name">search.bookstore.book</field>
+      <field name="model">bookstore.book</field>
+      <field name="arch" type="xml">
+        <search string="Bookstore">
+          <field name="name" />
+          <field name="author" />
+          <filter name="catalog_id" string="စီမံခန့်ခွဲခြင်း" domain="[('catalog_id', '=', 'management')]" />
+          <filter name="catalog_id" string="biography" domain="[('catalog_id', '=', 'Biography')]" />
+          <filter name="catalog_id" string="action" domain="[('catalog_id', '=', 'action')]" />
+        </search>
+      </field>
+    </record>
+  </data>
+</odoo>

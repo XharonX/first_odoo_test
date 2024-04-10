@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <record id="tree_book_store" model="ir.ui.view">
+    <field name="name">tree.bookstore.book</field>
+    <field name="model">bookstore.book</field>
+    <field name="arch" type="xml">
+      <tree string="Book Store List">
+<!--        <field name="image"/>-->
+        <field name="name"/>
+        <field name="author_id"/>
+        <field name="catalog_id"/>
+        <field name="pages"/>
+        <field name="price"/>
+      </tree>
+    </field>
+  </record>
+</odoo>

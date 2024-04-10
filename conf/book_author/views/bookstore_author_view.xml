@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="action_bookstore_author" model="ir.actions.act_window">
+      <field name="name">bookstore.book.author</field>
+      <field name="res_model">bookstore.author</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="help" type="html">
+        <p> Add a new author to the bookstore.</p>
+      </field>
+    </record>
+    <menuitem id="bookstore_book" name="book author" action="action_bookstore_author" />
+<!--    <menuitem id="bookstore_book" name="book author" action="bookstore_book_author" parent="bookstore" />-->
+<!--    <menuitem id="bookstore_book" name="book author" action="bookstore_book_author" parent="bookstore" />-->
+
+  </data>
+</odoo>

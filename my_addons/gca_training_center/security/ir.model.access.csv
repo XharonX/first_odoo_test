@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_training_courses,Access Courses,model_gca_training_course,base.group_user,1,1,1,1
+access_training_instructor,Access Instructor,model_res_partner,base.group_user,1,1,1,1
+access_training_centre,Access Training Center,model_gca_training_center,base.group_user,1,1,1,1
+access_training_courses_chapters,Access Course Chapters,model_gca_training_course_chapter,course_group_user,1,1,1,1
+access_course_category,Access Course Category,model_course_category,base.group_user,1,1,1,1
