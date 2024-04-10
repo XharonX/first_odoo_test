@@ -68,9 +68,16 @@
         <form>
           <header>
             <button name="action_do_cancel" type="object" class="oe_highlight" string="cancel" groups="gca_training_center.course_group_manager"/>
+            <button name="action_do_developing" type="object" class="oe_highlight" string="developing"/>
             <button name="action_do_completed" type="object" class="oe_highlight" string="complete"/>
+            <field name="state" widget="statusbar" statusbar_visible="new,developing,confirm"/>
           </header>
           <sheet>
+<!--          <div class="button_box" position="inside">-->
+<!--            <button name="action_enrollment" class="oe_stat_button" widget="statinfo" string="Enrollment" icon="fa-address-card" type="object">-->
+<!--              <field name="state" widget="statinfo" string="Enrollments" />-->
+<!--            </button>-->
+<!--          </div>-->
             <div class="oe_title">
               <h1>
                 <field name="name" placeholder="Enter Course Title" style="font: Poppins;"/>

@@ -31,19 +31,17 @@ class Course(models.Model):
     num_chapters = fields.Integer(compute="_compute_num_of_chapters", string='numbers of chapter')
     desc = fields.Html("Description")
     state = fields.Selection([("new", "new"),
-            ("completed", "completed"),
             ("developing", "developing"),
+            ("completed", "completed"),
             ("upgrading", "upgrading"),
             ("canceled", "canceled")], default='new'
                              )
     # num_of_students_enrolls =fields.Integer(compute=num_of_students_enrolls)
 
-    def action_do_new(self):
-        if self.state not in ['developing', 'upgrading', 'completed'] or self.create_date == datetime.today:
-            return self.write({
-                    'state': 'new'
-                }
-            )
+    def action_do_developing(self):
+        return self.write({
+            'state': 'developing'
+        })
 
     def action_do_cancel(self):
         if self.state != 'completed':
@@ -63,7 +61,6 @@ class Course(models.Model):
 
     @api.depends('chapter_ids')
     def _compute_num_of_chapters(self):
-
         for course in self:
             print(self)
             course.num_chapters = len(course.chapter_ids)

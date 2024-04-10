@@ -86,10 +86,10 @@
       <field name="res_model">gca.training.course.chapter</field>
       <field name="view_mode">tree,form</field>
     </record>
-<!--    <menuitem parent="training_course" id="training_course_menu" name="Courses"  action="action_training_course"/>-->
-<!--    <menuitem parent="training_course" id="basic_training_course_menu" name="Basic level"  action="action_training_basic_course"/>-->
-<!--    <menuitem parent="training_course" id="intermediate_training_course_menu" name="Intermediate level"  action="action_training_intermediate_course"/>-->
-<!--    <menuitem parent="training_course" id="advanced_training_course_menu" name="Advanced level" action="action_training_advanced_course"/>-->
-<!--    <menuitem parent="training_course" id="expert_training_course_menu" name="Expert level" action="action_training_expert_course" />-->
+    <menuitem parent="training_course" id="training_course_menu" name="Courses"  action="action_training_course"/>
+    <menuitem parent="training_course" id="basic_training_course_menu" name="Basic level"  action="action_training_basic_course"/>
+    <menuitem parent="training_course" id="intermediate_training_course_menu" name="Intermediate level"  action="action_training_intermediate_course"/>
+    <menuitem parent="training_course" id="advanced_training_course_menu" name="Advanced level" action="action_training_advanced_course"/>
+    <menuitem parent="training_course" id="expert_training_course_menu" name="Expert level" action="action_training_expert_course" />
   </data>
 </odoo>
