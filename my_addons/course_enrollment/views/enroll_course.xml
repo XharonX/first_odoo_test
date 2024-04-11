@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="enrollment_form_view" model="ir.ui.view">
+      <field name="name">Enrollment Form</field>
+      <field name="model">enroll.course</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <header>
+            <button name="action_confirm" type="object" string="Confirm" states="new"/>
+            <field name="state" widget="statusbar" statusbar_visible="new,confirm" />
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="enroll_date" />
+                <field name="currency_id" />
+              </group>
+              <group>
+                <field name="price" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

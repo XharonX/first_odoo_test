@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="course_form_view_inherit_enrollment" model="ir.actions.act_window">
+      <field name="name">course.form.view.inherit.enrollment</field>
+      <field name="res_model">gca.training.course</field>
+      <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+       <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="view_inherit_enrollment" name="enrollment"  action="course_form_view_inherit_enrollment" parent="gca_training_center.menu_training"/>
+
+  </data>
+</odoo>

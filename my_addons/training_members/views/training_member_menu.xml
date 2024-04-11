@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+<!--                VIEW UI           -->
+    <record id="training_members_form_view" model="ir.ui.view">
+      <field name="name">Member Form</field>
+      <field name="model">training_members.member</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name"/>
+                <field name="card_num"/>
+                <field name="email"/>
+                <field name="phone"/>
+              </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="training_members_tree_view" model="ir.ui.view">
+      <field name="name">Member List</field>
+      <field name="model">training_members.member</field>
+      <field name="arch" type="xml">
+        <tree string="">
+          <field name="name"/>
+          <field name="card_num"/>
+          <field name="email"/>
+          <field name="phone"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_training_member" model="ir.actions.act_window">
+      <field name="name">Training Member</field>
+      <field name="res_model">training_members.member</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="help" type="html">
+        <p> Hello World! </p>
+      </field>
+      </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="training_member_menu" name="Training Member" action="action_training_member" parent="gca_training_center.menu_training"/>
+  </data>
+</odoo>

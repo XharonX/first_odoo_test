@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="gca_training_center.course_group_manager" model="res.groups">
+            <field name="name">Supervisor</field>
+
+        </record>
+
+
+    </data>
+</odoo>

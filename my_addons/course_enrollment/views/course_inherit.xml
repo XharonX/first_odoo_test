@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    <!-- Inherit Form View to Modify it -->
+    <record id="course_inherit_form" model="ir.ui.view">
+      <field name="name">Inherit Course</field>
+      <field name="model">gca.training.course</field>
+      <field name="inherit_id" ref="gca_training_center.training_course_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='price']" position="after">
+          <field name="discount"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
+
+<!--<xpath expr="//sheet//notebook//page[@name='order_lines']//group[@name='note_group']//group[@name='sale_total']//field[@name='amount_tax']" position="replace">-->
+<!--    <field name="commercial_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
+<!--    <field name="tc_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
+<!--</xpath>-->
