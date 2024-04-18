@@ -18,7 +18,7 @@ class Course(models.Model):
     active = fields.Boolean('active', default=True)
     price = fields.Monetary('Price', 'currency_id')  ## currency_field='currency_id')
     discount = fields.Float(string='discount')
-    category_id = fields.Many2many('course.category', )
+    category_id = fields.Many2many('course.category')
     currency_id = fields.Many2one('res.currency')
     manager_remark = fields.Text()
     instructor_id = fields.Many2one('res.partner', string='Instructor')
@@ -56,8 +56,8 @@ class Course(models.Model):
     def action_enrollment(self):
         return None
 
-    # def num_of_students_enrolls(self):
-    #     return None
+    def num_of_students_enroll(self):
+        return None
 
     @api.depends('chapter_ids')
     def _compute_num_of_chapters(self):

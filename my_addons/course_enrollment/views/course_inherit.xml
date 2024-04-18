@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
     <!-- Inherit Form View to Modify it -->
@@ -6,15 +7,17 @@
       <field name="model">gca.training.course</field>
       <field name="inherit_id" ref="gca_training_center.training_course_form_view"/>
       <field name="arch" type="xml">
+        <div name="button_box" position="inside">
+          <button name="action_enrollment" class="oe_stat_button" icon="fa-address-card" type="object">
+            <field name="num_of_students_enroll" string="Enrolled" widget="statinfo"/>
+          </button>
+        </div>
         <xpath expr="//field[@name='price']" position="after">
           <field name="discount"/>
+          <field name="early_bird_discount"/>
+          <field name="early_bird_end_date"/>
         </xpath>
       </field>
     </record>
   </data>
 </odoo>
-
-<!--<xpath expr="//sheet//notebook//page[@name='order_lines']//group[@name='note_group']//group[@name='sale_total']//field[@name='amount_tax']" position="replace">-->
-<!--    <field name="commercial_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
-<!--    <field name="tc_tax" widget="monetary" options="{'currency_field': 'currency_id'}"/>-->
-<!--</xpath>-->

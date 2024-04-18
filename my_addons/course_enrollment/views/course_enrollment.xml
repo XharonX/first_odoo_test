@@ -2,7 +2,7 @@
 <odoo>
 
   <record id="enrollment_form_view" model="ir.ui.view">
-    <field name="name">Enrollment Form</field>
+    <field name="name">Course Enrollment</field>
     <field name="model">enroll.course</field>
     <field name="arch" type="xml">
       <form string="Enrollment">
@@ -46,26 +46,6 @@
       <p> Hello World!</p>
     </field>
   </record>
-    <record id="" model="ir.ui.view">
-      <field name="name"></field>
-      <field name="model"></field>
-      <field name="inherit_id" ref=""/>
-      <field name="arch" type="xml">
-        <xpath expr="//field[@name='name']" position="">
-            <!-- Add new fields here -->
-        </xpath>
-      </field>
-    </record>
-    <record id="" model="ir.ui.view">
-      <field name="name"></field>
-      <field name="model"></field>
-      <field name="inherit_id" ref=""/>
-      <field name="arch" type="xml">
-        <xpath expr="//field[@name='name']" position="">
-            <!-- Add new fields here -->
-        </xpath>
-      </field>
-    </record>
-  <menuitem action="enrollment_view" name="Enrollment" id="enrollment_view_menu" parent="gca_training_center.menu_training" />
+
 </odoo>
     <!-- This Menu Item must have a parent and an action -->

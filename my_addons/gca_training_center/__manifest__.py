@@ -11,5 +11,6 @@
         'views/course_view_ui.xml',
         'views/training_center_view_ui.xml'
         # 'views/.xml'
-    ]
+    ],
+    'sequence': '-10',
 }

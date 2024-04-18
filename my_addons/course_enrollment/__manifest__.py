@@ -11,7 +11,8 @@
         'security/course_security.xml',
         'views/course_inherit.xml',
         'views/enroll_course.xml',
-        'views/enrollment_menu_items.xml',
+
+        # 'views/enrollment_menu_items.xml',
 
     ]
 }

@@ -1,0 +1,10 @@
+odoo16/
+.idea/
+my_addons/my_issue/
+my_addons/hm_hospital/
+custom/
+my_addons/book_*
+conf/book_*
+*.pyc
+**/*.pyc
+*/__pycache__/*

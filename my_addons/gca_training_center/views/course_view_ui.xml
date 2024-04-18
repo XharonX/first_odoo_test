@@ -15,7 +15,7 @@
           <field name="instructor_id" />
           <field name="price" />
           <field name="startDate" />
-          <field name="num_chapters" />
+          <field name="num_chapters" string="Chapters" />
           <field name="state" />
         </tree>
       </field>
@@ -73,11 +73,7 @@
             <field name="state" widget="statusbar" statusbar_visible="new,developing,confirm"/>
           </header>
           <sheet>
-<!--          <div class="button_box" position="inside">-->
-<!--            <button name="action_enrollment" class="oe_stat_button" widget="statinfo" string="Enrollment" icon="fa-address-card" type="object">-->
-<!--              <field name="state" widget="statinfo" string="Enrollments" />-->
-<!--            </button>-->
-<!--          </div>-->
+            <div name="button_box" class="oe_button_box" position="inside" />
             <div class="oe_title">
               <h1>
                 <field name="name" placeholder="Enter Course Title" style="font: Poppins;"/>
