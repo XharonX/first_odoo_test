@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-    <record id="training_center_tree_view" model="ir.ui.view">
-        <field name="name">training.center.tree.view</field>
-        <field name="model">training.center</field>
-        <field name="arch" type="xml">
-            <tree string="">
-                <field name="name"/>
-                <field name="logo"/>
-                <field name="email"/>
-                <field name="website"/>
-            </tree>
-        </field>
+    <record id="action_training_center_tree" model="ir.actions.act_window">
+      <field name="name">Training Center</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="base.view_partner_tree" />
+      <field name="domain">[('is_company','=', True)]</field>
+<!--      <field name="context">{'default_is_company': True,'default_descr':'Training School'}</field>-->
     </record>
+    <record id="training_center_inherit_tree_view" model="ir.ui.view">
+      <field name="name">training.center.tree.view</field>
+      <field name="model">training.center</field>
+      <field name="inherit_id" ref="base.view_partner_tree"/>
+    </record>
+    <record id="training_center_inherit_form_view" model="ir.ui.view">
+      <field name="name">training.center.inherit.form</field>
+      <field name="model">training.center</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page name="Courses">
+            <field name="course_ids"/>
+          </page>
+        </xpath>
+      </field>
+    </record>
+
     <record id="action_training_center" model="ir.actions.act_window">
       <field name="name">Training Center</field>
-      <field name="res_model">training.center</field>
+      <field name="res_model">res.partner</field>
       <field name="view_mode">tree,form</field>
       <field name="help" type="html">
         <p>There is no training center. Please Create a training center.</p>
       </field>
     </record>
-<!--    <menuitem id="menu_training_center_root" name="Training Center"/>-->
-<!--    <menuitem id="menu_training_center" name="Training Centers" parent="menu_training_center_root" action="action_training_center"/>-->
+    <menuitem id="menu_training_center" name="Training Center" parent="menu_training_center_tab" action="action_training_center_tree"/>
   </data>
 </odoo>

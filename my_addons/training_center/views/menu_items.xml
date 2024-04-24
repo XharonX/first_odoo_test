@@ -3,9 +3,9 @@
     <menuitem id="menu_training_center_root" name="Training Center" web_icon="training_center,static/description/cubes_school.png" sequence="-100"/>
 
   <!-- This Menu Item must have a parent and an action -->
-  <menuitem id="menu_training_center" name="Training Centers" parent="menu_training_center_root" action="action_training_center" />
   <menuitem id="menu_training_course" name="Training Courses" parent="menu_training_center_root" action="action_training_course"/>
   <menuitem id="menu_course_chapter" name="Chapters" parent="menu_training_center_root" action="action_training_course_chapter"/>
-  <menuitem id="menu_training_center" name="Training Center" parent="menu_training_center_root" action="action_training_center"/>
-
+  <menuitem id="menu_training_center_tab" name="Training Center" parent="menu_training_center_root" action="action_training_center"/>
+    <menuitem id="menu_training_configurations" name="Configurations" parent="menu_training_center_tab"/>
+      <menuitem id="menu_course_categories" name="Category" parent="menu_training_configurations" action="action_course_category"/>
 </odoo>

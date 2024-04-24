@@ -1,3 +1,4 @@
+import random
 from odoo import fields, models, api
 
 
@@ -49,12 +50,19 @@ class TrainingCourse(models.Model):
 
 class TrainingCenter(models.Model):
     _name = 'training.center'
-    name = fields.Char('Training Center: ', required=True)
-    logo = fields.Image()
-    email = fields.Char("Email")
-    website = fields.Char("Website")
+    name = fields.Char('Training Center: ', required=True, related='company_name')
+    partner_id = fields.Many2one('res.partner', delegate=True, ondelete='cascade')
+    is_company = fields.Boolean(default=True)
     course_ids = fields.One2many('training.course', 'training_center_id', 'Courses')
 
+    def create_company(self):
+        super().create_company()
+
+    def mail_action_blacklist_remove(self):
+        pass
+
+    def open_commercial_entity(self):
+        ...
 
 class Chapters(models.Model):
     _name = 'course.chapter'
@@ -73,3 +81,5 @@ class CourseCategory(models.Model):
     parent_id = fields.Many2one('course.category', 'Parent', ondelete='restrict')
     parent_path = fields.Char(index=True)
     child_ids = fields.One2many('course.category', 'parent_id', 'Sub')
+    color = fields.Integer('Color', default=random.randint(1, 11))
+    active = fields.Boolean(default=True)

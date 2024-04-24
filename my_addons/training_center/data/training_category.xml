@@ -1,8 +1,36 @@
 <odoo>
   <data>
-    <record id="">
-
+    <record id="course_category_java" model="course.category">
+      <field name="name">Java</field>
+      <field name="active" eval="True"/>
     </record>
-
+    <record id="course_category_python" model="course.category">
+      <field name="name">Python</field>
+      <field name="active" eval="True"/>
+    </record>
+    <record id="course_category_business" model="course.category">
+      <field name="name">Business</field>
+      <field name="active" eval="True"/>
+    </record>
+    <record id="course_category_management" model="course.category">
+      <field name="name">Management</field>
+      <field name="active" eval="True"/>
+    </record>
+    <record id="course_category_japanese" model="course.category">
+      <field name="name">Japanese</field>
+      <field name="active" eval="True"/>
+    </record>
+    <record id="course_category_c_programming" model="course.category">
+      <field name="name">C &amp; C++ Programming</field>
+      <field name="active" eval="True"/>
+    </record>
+    <record id="course_category_electronics" model="course.category">
+      <field name="name">Electronics</field>
+      <field name="active" eval="True"/>
+    </record>
+    <record id="course_category_arduino" model="course.category">
+      <field name="name">Arduino</field>
+      <field name="active" eval="True"/>
+    </record>
   </data>
 </odoo>

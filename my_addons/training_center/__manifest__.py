@@ -18,6 +18,8 @@
         'views/menu_items.xml',
         'views/course_chapter_view.xml',
         'views/training_center_view.xml',
+        'views/categories.xml',
+        'data/training_category.xml'
     ],
     'sequence': '-100'
 }
