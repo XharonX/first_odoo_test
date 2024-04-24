@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_training_course_tree" model="ir.ui.view">
+      <field name="name">training.course.tree.view</field>
+      <field name="model">training.course</field>
+      <field name="arch" type="xml">
+          <tree string="" decoration-success="state=='complete'" decoration-info="state=='developing'" decoration-muted="state=='cancel'">
+              <field name="name"/>
+              <field name="start_date" optional="show"/>
+              <field name="instructor_id" optional="show"/>
+              <field name="num_chapters" optional="show" string="Chapters"/>
+            <field name="state" optional="show"/>
+            <field name="category_ids" optional="show" widget="many2many_tags"/>
+          </tree>
+      </field>
+  </record>
+    <record id="view_training_course_form" model="ir.ui.view">
+    <field name="name">training.course.form.view</field>
+    <field name="model">training.course</field>
+    <field name="arch" type="xml">
+      <form string="">
+        <header>
+          <button name="action_cancel" type="object" string="cancel" states="new,developing"/>
+          <button name="action_complete" type="object" string="Complete" states="developing"/>
+          <button name="action_developing" type="object" string="Develop" states="new"/>
+          <field name="state" widget="statusbar" statusbar_visible="new,developing,complete"/>
+        </header>
+        <sheet>
+          <div name="button_box" class="oe_button_box" position="inside" />
+          <div class="oe_title">
+            <h1>
+              <field name="name" placeholder="Enter course title:"/>
+            </h1>
+          </div>
+          <group>
+            <group>
+              <field name="active" invisible="1"/>
+              <field name="level"/>
+              <field name="price"/>
+              <field name="currency_id"/>
+              <field name="start_date"/>
+            </group>
+            <group>
+              <field name="category_ids" widget="many2many_tags"/>
+              <field name="instructor_id"/>
+              <field name="training_center_id"/>
+              <field name="num_chapters"/>
+            </group>
+          </group>
+          <notebook>
+            <page name="Chapter">
+              <field name="chapter_ids"/>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" group="base.group_user"/>
+          <field name="activity_ids"/>
+          <field name="message_ids"/>
+        </div>
+      </form>
+    </field>
+  </record>
+  <record id="view_training_course_search" model="ir.ui.view">
+    <field name="name">training.course.search.view</field>
+    <field name="model">training.course</field>
+    <field name="arch" type="xml">
+      <search string="">
+        <searchpanel>
+          <field name="training_center_id" icon="fa-bars"/>
+          <field name="instructor_id" icon="fa-users"/>
+          <field name="level" icon="fa-bars"/>
+          <field name="state" enable_counter="1"/>
+        </searchpanel>
+      </search>
+   </field>
+    </record>
+    <record id="action_training_course" model="ir.actions.act_window">
+        <field name="name">Training Course</field>
+        <field name="res_model">training.course</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p>There is no course. Please Create a new course.</p>
+        </field>
+    </record>
+  </data>
+</odoo>

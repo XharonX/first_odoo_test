@@ -1,0 +1,56 @@
+<odoo>
+  <data>
+    <template id="enroll_course_template_id">
+      <t t-call="web.html_container">
+        <t t-call="web.basic_layout">
+          <div class="page">
+            <t t-foreach="docs" t-as="doc">
+              <table class="table o_main_table">
+                <thead>
+                  <tr>
+                    <th colspan="2">
+                      <h1><t t-esc="doc.student_id.name"/></h1><h2>(<t t-esc="doc.name"/>)</h2>
+                    </th>
+                     <th colspan="2">
+                       <span t-field="doc.profile" t-options="{'widget': 'image', 'style':'height: 2in; width: 2in;'}" />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th style="width: 24px; font-weight:600;">Instructor</th>
+                    <th colspan="2" style="width: 24px;"><t t-esc="doc.course_id.instructor_id.name"/></th>
+                  </tr>
+                  <tr>
+                    <th style="width: 24px; font-weight:600;">Courses</th>
+                    <th colspan="2" style="width: 24px;"><t t-esc="doc.course_id.name"/></th>
+                  </tr>
+                  <tr>
+                    <th style="width: 24px; font-weight:600;">Price</th>
+                    <th colspan="2" style="width: 24px;">
+                      <t t-if="doc.course_id.discount">
+                        <del>
+                        <t t-esc="doc.price"/>
+                        </del>
+                        <t t-esc="doc.total_amount"/>
+                      </t>
+                      <t t-else="">
+                        <t t-esc="doc.price"/>
+                      </t>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th style="width: 24px; font-weight:600;">Enroll Date</th>
+                    <th colspan="2" style="width: 24px;"><t t-esc="doc.enroll_date"/></th>
+                  </tr>
+                </tbody>
+              </table>
+            </t>
+          </div>
+        </t>
+      </t>
+    </template>
+    <report id="course_enrollment_report" model="enroll.course" report_type="qweb-pdf" name="course_enrollment.enroll_course_template_id" string="Enrollment Report"/>
+  </data>
+</odoo>
+

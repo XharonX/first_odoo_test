@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_training_course_inherit_form" model="ir.ui.view">
+      <field name="name">training.course.inherit.view.form</field>
+      <field name="model">training.course</field>
+      <field name="inherit_id" ref="training_center.view_training_course_form"/>
+      <field name="arch" type="xml">
+        <div name="button_box" position="inside">
+          <button name="action_enrollment" type="object" string="ObjectButton" class="oe_stat_button" icon="fa-address-card">
+            <field name="enrolled_students" string="Enrolled" widget="statinfo"/>
+          </button>
+        </div>
+        <xpath expr="//field[@name='price']" position="after">
+          <field name="discount"/>
+          <field name="early_bird_limit"/>
+          <field name="early_bird_discount"/>
+          <field name="early_bird_date"/>
+        </xpath>
+      </field>
+    </record>
+    <record id="action_course_inherit_view" model="ir.actions.act_window">
+      <field name="name">Course Inherit</field>
+      <field name="res_model">training.course</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p> Hello World!</p>
+      </field>
+    </record>
+  </data>
+</odoo>

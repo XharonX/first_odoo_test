@@ -8,3 +8,4 @@ conf/book_*
 *.pyc
 **/*.pyc
 */__pycache__/*
+conf/hm_hospital/

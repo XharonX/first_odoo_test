@@ -1,19 +1,20 @@
+# -*- coding: utf-8 -*-
 {
-    'name': 'Course Extend',
-    'category': "Training",
-    'summary': "This module is extends with GCA training center course",
-    'author': 'Training Center',
-    'depends': [
-        'gca_training_center',
-    ],
+    'name': "course_enrollment",
+
+    'author': "Ninux",
+    'category': 'Training',
+
+    'depends': ['training_center', 'mail'],
+
     'data': [
         'security/ir.model.access.csv',
-        'security/course_security.xml',
-        'views/course_inherit.xml',
-        'views/enroll_course.xml',
-
-        # 'views/enrollment_menu_items.xml',
-
-    ]
+        'views/enroll_course_views.xml',
+        'views/course_inherit_view.xml',
+        'views/menu_items.xml',
+        'data/sequence.xml',
+        'wizard/enroll_message_wizard.xml',
+        'reports/course_enrollment_print.xml',
+    ],
+    'sequence': '-50'
 }
-

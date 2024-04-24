@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="menu_course_enrollment" name="Enroll Course" parent="training_center.menu_training_center_root" action="action_course_enroll"/>
+
+  </data>
+</odoo>

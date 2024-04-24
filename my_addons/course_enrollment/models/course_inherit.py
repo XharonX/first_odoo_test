@@ -1,25 +1,24 @@
-from odoo import models, fields, api
+from odoo import fields, models, api
 
 
-class Course(models.Model):
-    _inherit = 'gca.training.course'
+class CourseInherit(models.Model):
+    _inherit = 'training.course'
 
-    discount = fields.Integer("discount")
-    enroll_ids = fields.One2many("enroll.course", 'course_ids')
-    early_bird_discount = fields.Integer("Early Bird Discount")
-    early_bird_end_date = fields.Date("Early Bird End Date: ")
-    num_of_students_enroll = fields.Integer(compute="_compute_num_of_students")
+    discount = fields.Integer('discount', tracking=True)
+    early_bird_limit = fields.Integer('Early Bird Limit', tracking=True)
+    early_bird_discount = fields.Integer('Early Bird Discount', tracking=True)
+    early_bird_date = fields.Date(tracking=True)
+    enroll_ids = fields.One2many("enroll.course", 'course_id')
+    enrolled_students = fields.Integer(compute="_get_students")
 
-    def _compute_num_of_students(self):
+    def _get_students(self):
         for course in self:
-            course.num_of_students_enroll = len(course.enroll_ids)
+            course.enrolled_students = len(course.enroll_ids)
 
     def action_enrollment(self):
-        domain = [('course_ids', '=', self.id)]
-        action = self.env.ref("course_enrollment.enrollment_view")
-        print(action)
+        domain = [('course_id', '=', self.id)]
+        action = self.env.ref('course_enrollment.action_course_enroll')
         result = action.read()[0]
-        print(result)
         result['domain'] = domain
         return result
-        # result['context'] = {'default_course_id': self.id }
+

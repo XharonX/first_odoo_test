@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_training_center,training_center.training_center,model_training_center,base.group_user,1,1,1,1
+access_training_course,training_center.training_course,model_training_course,base.group_user,1,1,1,1
+access_training_course_chapter,training_center.training_course.course_chapter,model_course_chapter,base.group_user,1,1,1,1
+access_training_course_category,training_center.training_course.course_category,model_course_category,base.group_user,1,1,1,1

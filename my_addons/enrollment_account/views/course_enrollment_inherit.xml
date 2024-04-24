@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="course_enrollment_inherit_form" model="ir.ui.view">
+    <field name="name">course.enrollment.inherit.form</field>
+    <field name="model">enroll.course</field>
+    <field name="inherit_id" ref="course_enrollment.view_course_enroll_form"/>
+      <field name="arch" type="xml">
+        <div name="action_reset_to_draft" position="inside">
+          <button name="action_reset_to_draft" type="object" string="Reset to Draft" states="confirm,cancel"/>
+        </div>
+        <xpath expr="//form/header/field[@name='state']" position="replace">
+          <field name="state" widget="statusbar" statusbar_visible="cancel,new,draft,confirm"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
+<!--<xpath expr="//form/header/field[@name='action_cancel']" position="inside">-->
+<!--                 Add your fields or attributes here -->
+<!--                <button name="action_reset_to_draft" type="object" string="Cancel" states="new,confirm" />-->
+<!--                <field name="state" widget="statusbar" statusbar_visible="cancel,new,draft,confirm"/>-->
+<!--            </xpath>-->

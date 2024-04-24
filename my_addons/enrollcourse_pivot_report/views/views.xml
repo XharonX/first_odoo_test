@@ -1,0 +1,21 @@
+<odoo>
+  <data>
+    <record id="course_enrollment_view_pivot" model="ir.ui.view">
+      <field name="name">Course Enrollment Statistics</field>
+      <field name="model">course.enrollment.statistics</field>
+      <field name="arch" type="xml">
+        <pivot string="Invoice Analysis" disable_linking="True">
+          <field name="course_id" type="row"/>
+          <field name="enroll_count" type="measure"/>
+        </pivot>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="course_enrollment_statistics">
+      <field name="name">Enrollment Statistic</field>
+      <field name="res_model">course.enrollment.statistics</field>
+      <field name="view_mode">pivot</field>
+    </record>
+    <menuitem name="Statistics" id="course_enrollment_statistics_menu" parent="training_center.menu_training_center_root"
+              action="course_enrollment_statistics"/>
+  </data>
+</odoo>

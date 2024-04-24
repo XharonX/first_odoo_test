@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="training_center_tree_view" model="ir.ui.view">
+        <field name="name">training.center.tree.view</field>
+        <field name="model">training.center</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="logo"/>
+                <field name="email"/>
+                <field name="website"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_training_center" model="ir.actions.act_window">
+      <field name="name">Training Center</field>
+      <field name="res_model">training.center</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p>There is no training center. Please Create a training center.</p>
+      </field>
+    </record>
+<!--    <menuitem id="menu_training_center_root" name="Training Center"/>-->
+<!--    <menuitem id="menu_training_center" name="Training Centers" parent="menu_training_center_root" action="action_training_center"/>-->
+  </data>
+</odoo>
